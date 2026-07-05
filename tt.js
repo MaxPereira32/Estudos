@@ -11,7 +11,10 @@ let niveis = [
   { limite: 8000, nome: "Platina" },
   { limite: 9000, nome: "Ascendente" },
   { limite: 10000, nome: "Imortal" },
-];
+  
+]
+
+
 
 while (xp > 0) {
   xp += passo;
