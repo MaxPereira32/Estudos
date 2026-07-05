@@ -1,32 +1,28 @@
-let nomeDoHeroi = "Invencível"
-let xp = 1000
-let nivel
-let nivelAnterior = null
+let nomeDoHeroi = "Invencível";
+let xp = 10;
+let nivel;
+let passo = 500;
+//let nivelAnterior = null
+let niveis = [
+  { limite: 1000, nome: "Ferro" },
+  { limite: 2000, nome: "Bronze" },
+  { limite: 5000, nome: "Prata" },
+  { limite: 7000, nome: "Ouro" },
+  { limite: 8000, nome: "Platina" },
+  { limite: 9000, nome: "Ascendente" },
+  { limite: 10000, nome: "Imortal" },
+];
 
-const passo = 100
-
-const niveis = [
-    {limite : 1000, nome: "Ferro"},
-    {limite : 2000, nome : "Bronze"},
-    {limite : 5000, nome : "Prata"},
-    {limite : 7000, nome : "Ouro"},
-    {limite : 8000, nome : "Platina"},
-    {limite : 9000, nome : "Ascendente"},
-    {limite : 10000, nome : "Imortal"},
-]
-
+while (xp > 0) {
+  xp += passo;
+  nivel = niveis.find((n) => xp <= n.limite)?.nome ?? "Radiante";
+ // if ( nivel !== nivelAnterior){
+  console.log(`XP: ${xp} - O Heroi com nome ${nomeDoHeroi} está no nivel ${nivel}`,
+  );
+//}
  
- while (xp > 0){
-    xp += passo
-    nivel = niveis.find(n => xp <= n.limite)?.nome ?? "Radiante"
-       
-    if ( nivel !== nivelAnterior){
-     console.log(`XP: ${xp} - O Herói de nome ${nomeDoHeroi} está no nível ${nivel}`)   
-    }
+//nivelAnterior = nivel
 
-    nivelAnterior = nivel
- }
- 
- console.log(`XP: ${xp} - O Herói de nome ${nomeDoHeroi} está no nível ${nivel}`)
+if (nivel === "Radiante") break;
 
-
+}
