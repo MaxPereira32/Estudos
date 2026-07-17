@@ -1,0 +1,22 @@
+.acordeon {
+    display: flex; /* layout flexível */
+    flex-direction: column; /* itens empilhados verticalmente */
+    width: 100%; /* ocupa toda a largura do container */
+}
+
+.acordeon .trigger{
+    font-size: 1.5rem; /* tamanho da fonte do botão */
+    display: flex; /* layout flexível */
+    flex-direction: row; /* itens em linha */
+    justify-content: space-between; /* espaço entre o texto e o ícone */
+    align-items: center; /* centraliza verticalmente */
+    padding: 1rem 2rem; /* padding interno do botão */
+    background-color: transparent; /* fundo transparente */
+    color:#fff;
+
+}
+
+.acordeon .content {
+    display: none; /* conteúdo oculto por padrão */
+}
+    

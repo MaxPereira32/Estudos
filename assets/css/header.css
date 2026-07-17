@@ -1,0 +1,100 @@
+/* Cabeçalho: layout em coluna com itens centralizados */
+.header{
+    display:flex; /* layout flexível */
+    flex-direction: column; /* itens em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    position: relative; /* referência para elementos absolutos */
+}
+
+/* Ícone decorativo no canto superior direito do cabeçalho */
+.header::after{    
+    content: ""; /* necessário para exibir o pseudoelemento */
+    display: inline-block; /* exibe como bloco inline */
+    position: absolute; /* posicionamento absoluto relativo ao .header */
+    top: 1rem; /* distância do topo */
+    right: 1rem; /* distância da direita */
+    width: 2rem; /* largura do ícone */
+    height: 1rem; /* altura do ícone */
+    background-image: url("../img/icons/header.svg"); /* imagem do ícone */
+    background-repeat: no-repeat; /* não repetir */
+    background-size: contain; /* ajustar ao container */
+}
+
+/* Foto de perfil: tamanho fixo de 200px com bordas circulares */
+.header .photo {
+    width: 200px; /* largura da foto */
+    height: 200px; /* altura da foto */
+    border-radius: 50%; /* bordas totalmente arredondadas (círculo) */
+    object-fit: cover; /* corta a imagem para preencher sem distorcer */
+}
+
+/* Título do cabeçalho centralizado com a fonte Neue Machine */
+.header .title {
+    font-family: "Neue Machine", "Open Sans", sans-serif; /* fonte do título */
+    text-align: center; /* alinhamento centralizado */
+}
+
+/* Seção de informações em coluna, alinhada à esquerda */
+.information {
+    display: flex; /* layout flexível */
+    flex-direction: column; /* itens em coluna */
+    align-items: flex-start; /* alinhados à esquerda */
+    width: 100%; /* ocupa toda a largura */
+}
+
+/* Cada linha de informação: ícone + texto lado a lado */
+.information p {
+    display: flex; /* layout flexível */
+    flex-direction: row; /* itens em linha */
+    align-items: center; /* centraliza verticalmente */
+    margin: 0.5rem; /* margem ao redor */
+}
+
+/* Pseudoelemento que insere o ícone antes de cada parágrafo de informação */
+.information  p::before {
+    content: ''; /* necessário para exibir o pseudoelemento */
+    display: inline-block; /* exibe como bloco inline */
+    width: 1rem; /* largura do ícone */
+    height: 1rem; /* altura do ícone */
+    background-repeat: no-repeat; /* não repetir a imagem */
+    background-size: contain; /* ajustar ao container */
+    margin-right: 0.5rem; /* espaçamento entre ícone e texto */
+}
+
+/* Ícones específicos para cada tipo de informação */
+.information .job::before{
+    background-image: url('../img/icons/job.svg'); /* ícone de trabalho */
+}
+.information .location::before{
+    background-image: url('../img/icons/location.svg'); /* ícone de localização */
+}
+.information .phone::before{
+    background-image: url('../img/icons/phone.svg'); /* ícone de telefone */
+}
+.information .e-mail::before{
+    background-image: url('../img/icons/e-mail.svg'); /* ícone de e-mail */
+}
+
+/* Em telas maiores que 678px, organiza header em grid: foto à esquerda, título e informações à direita */
+@media only screen and (min-width: 678px) {
+    .header {
+        display: grid; /* layout grid */
+        grid-template-areas: "photo title" "photo information"; /* áreas do grid */
+        grid-template-rows: auto; /* altura automática das linhas */
+    }
+    .information {
+        align-items: left; /* alinhamento à esquerda */
+    }
+
+    .header .photo {
+        grid-area: photo; /* posiciona na área photo */
+    }
+    .header .title {
+        grid-area: title; /* posiciona na área title */
+        text-align: left; /* alinhamento à esquerda */
+        max-width: 200px; /* largura máxima do título */
+    }
+    .header .information {
+        grid-area: information; /* posiciona na área information */
+    }
+}

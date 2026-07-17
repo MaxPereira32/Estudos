@@ -1,0 +1,79 @@
+/* Importa a fonte Open Sans do Google Fonts com todos os pesos de 300 a 700 */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..700;1,300..700&display=swap");
+
+/* Define a fonte personalizada "Neue Machine" a partir de um arquivo local */
+@font-face {
+  font-family: "Neue Machine"; /* nome da fonte personalizada */
+  src: url("../css/fonts/NeueMachine-Regular.otf"); /* arquivo da fonte */
+}
+
+/* Aplica a fonte Neue Machine como padrão para todos os elementos */
+* {
+  font-family: "Neue Machine", "open sans", sans-serif; /* fallback de fontes */
+}
+
+/* Define box-sizing border-box e sobrescreve a fonte para Open Sans com peso 400 */
+* {
+  box-sizing: border-box; /* inclui padding/border no tamanho total */
+  font-family: "open sans", sans-serif; /* fonte principal */
+  font-weight: 400; /* peso normal */
+}
+
+/* Estilos básicos do body: fundo preto e texto branco */
+body {
+  background-color: #000; /* fundo preto */
+  color: #fff; /* texto branco */
+}
+
+/* Container principal com borda branca, cantos arredondados e margem */
+.main {
+  margin: 1rem; /* margem externa */
+  padding: 1cqh; /* padding baseado na altura do container */
+  border: 1px solid #fff; /* borda branca fina */
+  border-radius: 1ch; /* arredondamento dos cantos */
+}
+
+/* Pseudoelemento que insere um SVG de fundo no canto superior esquerdo (fixo) */
+/* O z-index: -1 coloca este elemento atrás do fluxo normal (z-index: auto = 0), */
+/* fazendo com que o conteúdo do <header> (foto, título, informações) fique sobreposto a ele. */
+.main::before {
+  content: ""; /* necessário para exibir o pseudoelemento */
+  background-image: url("../img/icons/background.svg"); /* imagem de fundo */
+  background-repeat: no-repeat; /* não repetir a imagem */
+  background-size: contain; /* ajustar ao container */
+  background-position: top left; /* posicionar no topo esquerdo */
+  position: fixed; /* fixo na tela */
+  top: 0; /* colado no topo */
+  left: 0; /* colado na esquerda */
+  width: 70vh; /* largura proporcional à viewport */
+  height: 50vh; /* altura proporcional à viewport */
+  z-index: -1; /* atrás de tudo */
+}
+
+/* Pseudoelemento que insere outro SVG de fundo no canto inferior direito (fixo) */
+/* Mesmo princípio do ::before: z-index: -1 garante que fique atrás do conteúdo do <header>. */
+.main::after {
+  content: ""; /* necessário para exibir o pseudoelemento */
+  background-image: url("../img/icons/background-fundo.svg"); /* imagem de fundo */
+  background-repeat: no-repeat; /* não repetir a imagem */
+  background-size: contain; /* ajustar ao container */
+  background-position: bottom right; /* posicionar no fundo direito */
+  position: fixed; /* fixo na tela */
+  bottom: 0; /* colado no fundo */
+  right: 0; /* colado na direita */
+  width: 70vh; /* largura proporcional à viewport */
+  height: 50vh; /* altura proporcional à viewport */
+  z-index: -1; /* atrás de tudo */
+}
+
+/* Em telas maiores que 678px, centraliza o .main e limita a largura máxima */
+@media only screen and (min-width: 678px) {
+  .main {
+   max-width: 1024px; /* largura máxima do container */
+    margin: 1cap auto; /* centraliza na horizontal */
+  }
+  .main::before, .main::after {
+    width: 70vh; /* mantém largura em telas maiores */
+  }
+  
+}
