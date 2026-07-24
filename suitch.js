@@ -7,6 +7,10 @@
 let frutas = "morango"
 
 switch (frutas) {
+
+
+
+//testest
   
   case "laranja":
     console.log("suco de laranja")
