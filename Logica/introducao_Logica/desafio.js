@@ -1,3 +1,4 @@
+
 let niveis = [
     { limite: 10, nome: "Ferro" },
     { limite: 20, nome: "Bronze" },
@@ -13,7 +14,7 @@ let nivel = "";
 while (nivel !== "Imortal") {
     let vitorias = 15;
     let derrotas = 2;
-
+ 
     saldoVitorias += vitorias - derrotas;
     nivel = niveis.find((n) => saldoVitorias <= n.limite)?.nome ?? "Imortal";
 

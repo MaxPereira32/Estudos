@@ -1,4 +1,4 @@
-torrar()
+ /*torrar()
 injetarPao()
 
 function torrar(){
@@ -9,11 +9,11 @@ injetarPao()
 function injetarPao(){
     console.log("preparando para injetar pão")
    console.log("finalizado")
-}
+}*/
 
 //========================================================
 
-main();
+/*main();
 
 function main() {
   getData();
@@ -26,22 +26,31 @@ function getData() {
 }
 
 function checkVAlue() {
-  console.log("validaddo dados");
+  console.log("validando dados");
 }
 
 function sendDataBse() {
   console.log("cadastrando dados");
-}
+}*/
 
 
 //=====================================================
+//Bando de Dados simulado
+const bancoDeDados = {
+    usuario: "max",
+    senha: "1234"
+};
 
+function dadosusuario(usuarioDigitado, senhaDigitada) {
 
-function enviarDados(){
-    let nomeDoBanco = "banco-de-dados"
-    console.log("salvandio dados em : "  + nomeDoBanco)
-
-    if(3 === 3){
-        console.log("senha Valida")
+    if (
+        usuarioDigitado === bancoDeDados.usuario &&
+        senhaDigitada === bancoDeDados.senha
+    ) {
+        console.log("Login autorizado");
+    } else {
+        console.log("Usuário ou senha inválidos");
     }
 }
+//Usuário insere os dados
+dadosUsuario("max", "1234");

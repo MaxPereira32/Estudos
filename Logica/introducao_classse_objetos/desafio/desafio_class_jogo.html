@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventureiro</title>
+    <style>
+        body{
+         background-color: rgb(173, 173, 173);
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="title"><h3>Seja bem-vindo Aventureiro. DIGITE SEUS DADOS!</h3></div>
+   
+    <input type="text" name="nome" id="nome" placeholder="Seu nome">
+    <input type="number" name="idade" id="idade" placeholder="Sua idade">
+    
+    <label for = ""></label>
+    <select name = "personagem" id="personagem">
+        <option value="Mago">Mago</option>
+        <option value="Guerreiro">Guerreiro</option>
+        <option value="Ninja">Ninja</option>
+        <option value="Monge">Monge</option>
+        
+    </select>
+    <input type="button" id="bts" value="confirmar">
+
+    <div id = "msg">Text</div>
+        <script>
+
+            class Aventureiro{
+                constructor(nome, idade, tipo){
+                    this.nome = nome;
+                    this.idade = idade;
+                    this.tipo = tipo;
+                }
+
+                atacar(){
+                    let acao ="";
+                    let tipo = this.tipo.toLowerCase();
+
+              if (this.tipo === "Monge") {
+                        acao = "usou artes marciais";
+                    } else if (this.tipo === "Mago") {
+                        acao = "usou magia";
+                    } else if (this.tipo === "Guerreiro") {
+                        acao = "usou espada";
+                    } else {
+                        acao = "usou shuriken";
+                    }  
+                    
+                    let efeito="";
+                    for(let i=0; i < 3;i++){
+                        efeito += "!";
+                    }
+
+                    return ` ${this.nome} tem ${this.idade} anos e é um ${this.tipo} que ${acao} ${efeito}`;
+             
+              }
+            }
+                   const corpo = document.body;
+                   const nome = document.getElementById('nome');
+                   const idade = document.getElementById('idade');
+                   const personagem = document.getElementById('personagem');
+                   const title = document.getElementById('title');
+                   title.style.color = 'blue';
+                   const d = document.getElementById('msg');
+                   d.style.background = 'green';
+                   d.innerText = 'Estamos aguardando';
+                   d.style.color = 'white';
+                   const bts = document.getElementById('bts');
+
+                   bts.addEventListener('click',function(){
+                    const heroi = new Aventureiro(nome.value,idade.value,personagem.value);
+                    
+                    d.innerText = heroi.atacar();
+                   });                     
+        
+            
+        </script>
+
+
+</body>
+</html>
