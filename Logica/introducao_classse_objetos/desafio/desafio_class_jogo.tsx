@@ -62,21 +62,21 @@ export default function DesafioClassJogo() {
                     type="text" 
                     placeholder="Seu nome" 
                     value={nome} 
-                    onChange={(e) => setNome(e.target.value)} 
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value)} 
                     style={{ marginRight: '5px' }}
                 />
                 <input 
                     type="number" 
                     placeholder="Sua idade" 
                     value={idade} 
-                    onChange={(e) => setIdade(e.target.value)} 
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIdade(e.target.value)} 
                     style={{ marginRight: '5px' }}
                 />
                 
                 <select 
                     id="personagem" 
                     value={personagem} 
-                    onChange={(e) => setPersonagem(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setPersonagem(e.target.value)}
                     style={{ marginRight: '5px' }}
                 >
                     <option value="Mago">Mago</option>
