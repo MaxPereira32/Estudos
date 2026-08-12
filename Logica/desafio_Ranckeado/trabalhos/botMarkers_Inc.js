@@ -22,8 +22,6 @@ function respostaBot(comando) {
         
     
 
-
-
  
 //Exemplo 2
 
@@ -48,9 +46,9 @@ switch (comande){
 
 
 /*Entrega do trabalho (Substituido Comando por comand e comande) para não 
- confudir o sistem.
+ confudir o sistem.*/
 
- const comand = gets();
+const comand = gets();
 if (comand === "start") {
     print("Bot started");
 } else if (comand === "stop") {

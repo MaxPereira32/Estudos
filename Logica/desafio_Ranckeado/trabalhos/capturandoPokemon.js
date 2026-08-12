@@ -24,5 +24,5 @@ if (escolhaDoTreinador === 1) {
     pokemonEscolhido = "Newtow";
 }
 
-console.log(`Parabéns Treinado você escolher, ${pokemonEscolhido}  como seu Pohémon 
+console.log(`Parabéns Treinador, você escolheu o ${pokemonEscolhido}  como seu Pohémon 
     inicial!`)

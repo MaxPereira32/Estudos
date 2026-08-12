@@ -11,12 +11,12 @@ let niveis = [
 let saldoVitorias = 0;
 let nivel = "";
 
-while (nivel !== "Imortal") {
-    let vitorias = 15;
+while (nivel !== "Lendário") {
+    let vitorias = 20;
     let derrotas = 2;
  
     saldoVitorias += vitorias - derrotas;
-    nivel = niveis.find((n) => saldoVitorias <= n.limite)?.nome ?? "Imortal";
+    nivel = niveis.find((n) => saldoVitorias <= n.limite)?.nome ?? "Lendário";
 
     console.log(`+${vitorias} vitórias / -${derrotas} derrotas | Saldo: ${saldoVitorias} | Nível: ${nivel}`);
 }
