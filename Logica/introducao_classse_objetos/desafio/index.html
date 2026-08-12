@@ -4,18 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body{
-            background-color: rgb(173, 173, 173);
-        }
-    </style>
 </head>
 <body>
     <input type="text" id="nome" placeholder="Seu nome">
-    <input type="number" number="Idade" id="Idade" placeholder="Sua idade">
-    
-    
-    <label for=""></label>
+    <input type="number" id="Idade" placeholder="Sua idade">
     <select name="nome" id="personagem">
         <option value="monge">Monge</option>
         <option value="mago">Mago</option>
@@ -23,59 +15,19 @@
         <option value="guerreiro">Guerreiro</option>
     </select>
     <input type="button" value="Confirmar">
-        <div id="msg">click</div>
-        <script>
-            // 5. Classes e Objetos
-            class Aventureiro {
-                constructor(nome, idade, tipo) {
-                    this.nome = nome;
-                    this.idade = idade;
-                    this.tipo = tipo;
-                }
+    <div id="msg">click</div>
 
-                atacar() {
-                    // 1. Variáveis
-                    let acao = "";
+    <script src="script.js"></script>
+    <script>
+        const nome = document.getElementById("nome");
+        const idade = document.getElementById("Idade");
+        const personagem = document.getElementById("personagem");
+        const msg = document.getElementById("msg");
 
-                    // 4. Estrutura de decisões e 2. Operadores (===)
-                    if (this.tipo === "monge") {
-                        acao = "usou artes marciais";
-                    } else if (this.tipo === "mago") {
-                        acao = "usou magia";
-                    } else if (this.tipo === "guerreiro") {
-                        acao = "usou espada";
-                    } else {
-                        acao = "usou shuriken";
-                    }   
-                    
-                    // 3. Laço de repetição (adicionando exclamações no final para cumprir o requisito)
-                    let efeito = "";
-                    for (let i = 0; i < 3; i++) {
-                        efeito += "!";
-                    }
-
-                    return ` ${this.nome} tem ${this.idade} anos e é um ${this.tipo} que ${acao} ${efeito}`;
-                }
-            }
-
-            const corpo = document.body;
-            const nome = document.getElementById("nome");
-            const idade = document.getElementById("Idade");
-            const personagem = document.getElementById("personagem");
-            const d = document.getElementById('msg');
-            const botao = document.querySelector('input[type="button"]');
-
-            d.style.background = 'green';
-            d.innerText = 'Estou aguardando...';
-            d.style.color = 'white';
-
-            botao.addEventListener('click', function() {
-                // Instanciando o objeto a partir da Classe Aventureiro
-                const heroi = new Aventureiro(nome.value, idade.value, personagem.value);
-                
-                // Chamando o método atacar
-                d.innerText = heroi.atacar();
-            });
-        </script>
+        document.querySelector('input[type="button"]').addEventListener("click", function () {
+            const heroi = new Aventureiro(nome.value, idade.value, personagem.value);
+            msg.innerText = heroi.atacar();
+        });
+    </script>
 </body>
 </html>
