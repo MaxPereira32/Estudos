@@ -15,7 +15,7 @@ const precoEtanol = 4.74;
 const tipoCombustivel = "etanol";
 const KmPorLitro = 7.5;
 const distancia = 100;
-let valorgasto = 0 ;
+var valorgasto = 0 ;
 
 const litrosConsumidos = distancia / KmPorLitro;
 

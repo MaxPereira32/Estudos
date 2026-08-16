@@ -9,22 +9,20 @@ Classificação:
 - Média entre 5 e 7: Recuperação
 - Média acima de 7: Aprovado */
 
+ let nota1 = 7;
+ let nota2 = 8;
+ let nota3 = 7;
 
-const nota1 = 5;
-const nota2 = 8;
-const nota3 = 9;
+ let media = (nota1 + nota2 + nota3) / 3;
 
-const media = (nota1 + nota2 + nota3) / 3;
-console.log(`A média do aluno é: ${media.toFixed(2)}`);
+ let med = (media.toFixed(2));
 
-/*Método de avaliação*/
-let classificacao;
-if(media < 5){
+ let lassificacao="";
+ if ( media < 5 ){
     classificacao = "Reprovado";
-} else if(media >= 5 && media <= 7){
-    classificacao = "em Recuperação";
-} else {
+ } else if (media >= 5 && media <= 7){
+    classificacao = "Recuperação";
+ } else{
     classificacao = "Aprovado";
-}
-
-console.log(`O aluno está: ${classificacao}`);
+ }
+ console.log(`A média do aluno é ${med} e sua classificação é ${classificacao}`);
