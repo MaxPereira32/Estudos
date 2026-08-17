@@ -12,7 +12,7 @@ Classificação imc EM ADULTOS:
 Math.pow(x: number, y: number): number. Retorna o valor de uma expressão base elevada a uma potência especificada.
 ------------------------------------------------------------------------------*/
 
-const peso = 90; // em kg
+const peso = 128; // em kg
 const altura = 1.85; // em metros
 
 const imc = peso / Math.pow(altura, 2); 
