@@ -4,7 +4,7 @@ Buleinas - true ou false
 
 Saber se o número é par ou ímpar*/
 
-const numero = 0; 
+const numero = 2; 
 
 const ehnumeroDivisivel = (numero % 2) === 0;
 console.log(ehnumeroDivisivel);
